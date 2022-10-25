@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <script>
+            function BMI(){
+            var weight=document.getElementById('kg').value;
+            var h=document.getElementById('cm').value;
+            var height=h/100;
+            var BMI = weight/Math.pow(height, 2);
+              
+           
+        if (BMI < 18.5){ 
+            document.getElementById('BMI').innerHTML= BMI; 
+            document.getElementById("result").innerHTML = "Underweight";
+        }
+         else if (BMI >= 18.5 && BMI <= 25){
+            document.getElementById('BMI').innerHTML= BMI; 
+            document.getElementById("result").innerHTML = "Normal";
+        }
+         else if (BMI >= 25 && BMI <= 30) {
+            document.getElementById('BMI').innerHTML= BMI; 
+            document.getElementById("result").innerHTML = "Obese";
+        }
+         else {document.getElementById('BMI').innerHTML= BMI; 
+         document.getElementById("result").innerHTML = "Overweight";
+        }            
+       
+        }
+        </script>
+    </head>
+    <body>
+        <border style="border: 50%;color: black;border-radius: 50%;"><div style="background-color:rgb(47, 185, 185); color : white; margin:50px;width : 50%;" >
+            <p style="font-size:30px;padding:0px">Body mass index(BMI)</p>
+            <p style="font-size:20px;padding:0px">A measure of body fat in adults</p>
+        </div>
+        <div style="margin:70px ;float:left;">
+            Weight<br>
+            <input type="text" id="kg">  kg <br>
+            Height<br>
+            <input type="text" id="cm" onkeyup="BMI()">  cm<br>
+        </div>
+        <div style="margin:60px ;float:left;">
+            <p id="BMI" style="text-align:center;color:rgb(47, 185, 185);font-size:x-large"></p>
+            <p id="result"></p>
+           </div></border>
+    </body>
+</html>
